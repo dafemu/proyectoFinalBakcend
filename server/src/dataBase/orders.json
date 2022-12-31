@@ -1,0 +1,37 @@
+[
+  {
+    "products": [
+      {
+        "name": "Ipad pro",
+        "description": "IPAD PRO",
+        "category": "Tablets",
+        "code": "12345",
+        "thumbnail": "url",
+        "price": "900",
+        "stock": "20",
+        "_id": 1,
+        "timestamp": 1668617504334,
+        "quantity": 5
+      },
+      {
+        "name": "Iphone 14",
+        "description": "iphone",
+        "category": "Celulares",
+        "code": "5678",
+        "thumbnail": "url",
+        "price": "700",
+        "stock": "20",
+        "_id": 2,
+        "timestamp": 1668617549363,
+        "quantity": 2
+      }
+    ],
+    "userId": 2,
+    "email": "david@gmail.com",
+    "timestamp": 167173310321,
+    "state": "generado",
+    "username": "David",
+    "direccion": "calle 3",
+    "_id": 1
+  }
+]

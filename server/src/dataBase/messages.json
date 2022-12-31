@@ -1,0 +1,16 @@
+[
+  {
+    "email": "pepe@gmail.com",
+    "fecha": "01/01/2022 05:05:05",
+    "mensaje": "Hola",
+    "_id": 1,
+    "timestamp": 1671642312594
+  },
+  {
+    "email": "david@gmail.com",
+    "fecha": "01/01/2022 05:05:05",
+    "mensaje": "Hola",
+    "_id": 2,
+    "timestamp": 1671642321931
+  }
+]

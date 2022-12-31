@@ -1,0 +1,24 @@
+[
+  {
+    "username": "pepe",
+    "edad": "33",
+    "telefono": "+573137438962",
+    "direccion": "calle 3",
+    "password": "123",
+    "email": "pepe@gmail.com",
+    "image": "url",
+    "_id": 1,
+    "timestamp": 1673454865788
+  },
+  {
+    "username": "david",
+    "edad": "45",
+    "telefono": "+573137438963",
+    "direccion": "calle 4",
+    "password": "123",
+    "email": "david@gmail.com",
+    "image": "url",
+    "_id": 2,
+    "timestamp": 1672347410567
+  }
+]
