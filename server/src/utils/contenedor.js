@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-const list = async (ruta) => {
+const getAll = async (ruta) => {
   try {      
     const data = fs.readFileSync(ruta, 'utf-8')
     const dataObj = JSON.parse(data) 
@@ -14,7 +14,7 @@ const list = async (ruta) => {
 const save = async (product, ruta) => {
   try {  
     let timestamp = new Date().getTime();            
-    const arr = await list(ruta);
+    const arr = await getAll(ruta);
     let id = arr.length > 0 ? arr.length + 1 : 1;
     product._id = id;
     product.timestamp = timestamp;
@@ -31,7 +31,7 @@ const save = async (product, ruta) => {
 
 const getById = async (x, ruta) => {   
   try {             
-    const arr = await list(ruta);
+    const arr = await getAll(ruta);
     if (arr.length === 0) {return "Archivo Vacio"}
     return (arr.find(el => el._id == x) || { error: 'No existe el producto' });
   }
@@ -42,7 +42,7 @@ const getById = async (x, ruta) => {
 
 const deleteById = async (i, ruta) => {  
   try {
-    const arr = await list(ruta);  
+    const arr = await getAll(ruta);  
     let index = arr.findIndex(x => x._id == i) 
     if (index == -1) {
       return ({ error: 'No existe el producto' });
@@ -59,7 +59,7 @@ const deleteById = async (i, ruta) => {
 
  const changeById = async (i, object, ruta) => {
   try {
-    const arr = await list(ruta);
+    const arr = await getAll(ruta);
     let index = arr.findIndex(x => x._id == i);
 
     if (index == -1) {
@@ -80,4 +80,4 @@ const deleteById = async (i, ruta) => {
   }
 }
 
-export {list, save, getById, deleteById, changeById};
+export {getAll, save, getById, deleteById, changeById};

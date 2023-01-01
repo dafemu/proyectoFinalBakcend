@@ -14,7 +14,7 @@ class CartContainer extends MemoriaContainer {
  
   async addProduct(idCart, product) {     
     try {  
-      const arr = await super.list();
+      const arr = await super.getAll();
       let indexCart = arr.findIndex(el => el._id == idCart);
       arr[indexCart].products.push(product);
       const data = await super.changeById(idCart, arr[indexCart]);
@@ -27,7 +27,7 @@ class CartContainer extends MemoriaContainer {
 
   async deleteProduct(idCart, idProduct) {
     try {
-      const arr = await super.list()
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})}
   
       let indexCart = arr.findIndex(el => el._id == idCart);
@@ -52,7 +52,7 @@ class CartContainer extends MemoriaContainer {
 
   async updateProduct(idCart, idProduct, quantity) {
     try {
-      const arr = await super.list();
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})}
 
       let indexCart = arr.findIndex(el => el._id == idCart);
@@ -78,7 +78,7 @@ class CartContainer extends MemoriaContainer {
 
   async deleteAllProducts(idCart) {
     try {
-      const arr = await super.list();
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})}
   
       let indexCart = arr.findIndex(el => el._id == idCart);

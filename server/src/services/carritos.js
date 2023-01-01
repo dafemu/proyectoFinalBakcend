@@ -3,7 +3,7 @@ import {ordersDao} from "../containers/Daos/index.js";
 import { productsDao } from "../containers/Daos/index.js";
 
 const getAllCarts = async () => {
-  const data = await cartsDao.list();
+  const data = await cartsDao.getAll();
   return data;
 };
 
@@ -58,7 +58,7 @@ const saveOrder = async (userId, products, email, username, direccion) => {
 };
 
 const getAllOrders = async () => {    
-  const data = await ordersDao.list();
+  const data = await ordersDao.getAll();
   return data;
 };
 

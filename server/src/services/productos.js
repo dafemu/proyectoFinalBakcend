@@ -1,7 +1,7 @@
 import { productsDao } from "../containers/Daos/index.js";
 
 const getAllProducts = async () => {
-  const products = await productsDao.list();
+  const products = await productsDao.getAll();
   return products;
 };
 

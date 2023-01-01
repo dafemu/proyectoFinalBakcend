@@ -1,7 +1,7 @@
 import {usersDao} from '../containers/Daos/index.js';
 
 const getAll = async () => {
-  const users = await usersDao.list();
+  const users = await usersDao.getAll();
   return users;
 };
 

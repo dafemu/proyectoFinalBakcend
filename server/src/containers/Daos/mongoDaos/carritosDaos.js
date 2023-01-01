@@ -15,7 +15,7 @@ class CartContainer extends MongoContainer {
  
   async addProduct(idCart, product) {     
     try {  
-      const arr = await super.list();
+      const arr = await super.getAll();
 
       let indexCart = arr.findIndex(el => el._id == idCart);
 
@@ -30,7 +30,7 @@ class CartContainer extends MongoContainer {
 
   async deleteProduct(idCart, idProduct) {
     try {
-      const arr = await super.list()
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})} 
   
       let indexCart = arr.findIndex(el => el._id == idCart);
@@ -56,7 +56,7 @@ class CartContainer extends MongoContainer {
 
   async updateProduct(idCart, idProduct, quantity) {
     try {
-      const arr = await super.list()
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})}
 
       let indexCart = arr.findIndex(el => el._id == idCart);
@@ -82,7 +82,7 @@ class CartContainer extends MongoContainer {
 
   async deleteAllProducts(idCart) {
     try {
-      const arr = await super.list()
+      const arr = await super.getAll();
       if (arr.length === 0) {return ({"Error" : "No hay Carritos"})} 
   
       let indexCart = arr.findIndex(el => el._id == idCart);

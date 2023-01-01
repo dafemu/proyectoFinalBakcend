@@ -1,8 +1,8 @@
 import '../connection/connection.js';
 import {messagesDao} from '../containers/Daos/index.js';
 
-const list = async () => {
-  const chat = await messagesDao.list();
+const getAll = async () => {
+  const chat = await messagesDao.getAll();
   return chat;
 }
 
@@ -11,4 +11,4 @@ const save = async (mensaje) => {
   return newMessage; 
 }
 
-export { list, save };
+export { getAll, save };

@@ -1,8 +1,8 @@
 import '../connection/connection.js'; 
-import { list, save } from '../services/chat.js';
+import { getAll, save } from '../services/chat.js';
 
 const getChat = async () => {
-  const messages = await list();  
+  const messages = await getAll();  
   return messages;
 }
 

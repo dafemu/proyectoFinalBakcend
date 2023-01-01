@@ -10,7 +10,7 @@ class UserContainer extends ArchivoContainer {
 
   async save(obj) {
     try {
-      const users = await this.list();
+      const users = await this.getAll();
       const userExist = users.find(user => user.email === obj.email); 
       if (userExist) {
         return false;
@@ -27,7 +27,7 @@ class UserContainer extends ArchivoContainer {
 
   async findByEmail (email) {
     try {
-      const users = await this.list();
+      const users = await this.getAll();
       const userExist = users.find(user => user.email === email);
       if (userExist) { 
         return userExist;

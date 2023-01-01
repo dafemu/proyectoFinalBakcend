@@ -5,7 +5,7 @@ class MongoContainer {
     this.schema = schema;    
   }
 
-  async list() {
+  async getAll() {
     try {
       const arr = await this.schema.find({});  
       return arr;
@@ -14,9 +14,9 @@ class MongoContainer {
     }
   }
 
-  async getById(idEl) {    
+  async getById(id) {    
     try {
-      const el = await this.schema.findOne({ _id: idEl })     
+      const el = await this.schema.findOne({ _id: id })     
       return el;
     } catch (err) {
       throw({error: 'elemento no encontrado'});
@@ -35,21 +35,21 @@ class MongoContainer {
     }
   }
 
-  async deleteById(idEl) {
+  async deleteById(id) {
     try {      
-      const data = await this.schema.findByIdAndDelete(idEl)       
+      const data = await this.schema.findByIdAndDelete(id)       
       return ('elemento Eliminado')
     } catch (error) {
       console.log(error);
     }
   }
 
-  async changeById(idEl, obj) {  
+  async changeById(id, obj) {  
     try {
       let timestamp = new Date().getTime();  
       obj.timestamp = timestamp   
       
-      const el = await this.schema.findByIdAndUpdate(idEl, obj)      
+      const el = await this.schema.findByIdAndUpdate(id, obj)      
       return ('elemento Actualizado') 
     } catch (error) {
       console.log(error);

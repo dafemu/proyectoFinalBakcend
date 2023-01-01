@@ -4,7 +4,7 @@ class MemoriaContainer {
     this.arr = arr
   }    
 
-  async list() { 
+  async getAll() { 
     const arr = this.arr   
     return arr;  
   }

@@ -9,7 +9,7 @@ class UserContainer extends MemoriaContainer {
 
   async save(obj){
     try {
-      const users = await this.list();
+      const users = await this.getAll();
       const userExist = users.find(user => user.email === obj.email); 
       if (userExist) {
         return false;
@@ -27,7 +27,7 @@ class UserContainer extends MemoriaContainer {
 
   async findByEmail (email) {
     try {
-      const users = await this.list();
+      const users = await this.getAll();
       const userExist = users.find(user => user.email === email);
       if (userExist) {
         return userExist; 

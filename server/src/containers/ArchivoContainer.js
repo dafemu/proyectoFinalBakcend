@@ -1,4 +1,4 @@
-import {list, save, getById, deleteById, changeById} from '../utils/contenedor.js';
+import {getAll, save, getById, deleteById, changeById} from '../utils/contenedor.js';
 
 class ArchivoContainer {
 
@@ -6,8 +6,8 @@ class ArchivoContainer {
     this.ruta = ruta;    
   }
 
-  async list() {    
-    const data = await list(this.ruta);  
+  async getAll() {    
+    const data = await getAll(this.ruta);  
     return data;  
   }
 

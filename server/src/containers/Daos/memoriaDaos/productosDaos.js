@@ -7,7 +7,7 @@ class ProductContainer extends MemoriaContainer {
   }
   
   async getByCategory(id) {
-    const arr = await super.list();
+    const arr = await super.getAll();
     
     if (arr.length === 0) {return ({"Error" : "No hay Productos"})} 
     
