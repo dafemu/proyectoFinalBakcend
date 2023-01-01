@@ -6,9 +6,9 @@ const getAll = async () => {
   return chat;
 }
 
-const save = async (mensaje) => { 
-  const newMessage = await messagesDao.save(mensaje);
+const create = async (mensaje) => { 
+  const newMessage = await messagesDao.create(mensaje);
   return newMessage; 
 }
 
-export { getAll, save };
+export { getAll, create };

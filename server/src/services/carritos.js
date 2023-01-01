@@ -13,7 +13,7 @@ const getCart = async (id) => {
 };
 
 const saveCart = async (userId, username, email, direccion) => {
-  const data = await cartsDao.save(userId, username, email, direccion);
+  const data = await cartsDao.create(userId, username, email, direccion);
   return data;
 };
 
@@ -53,7 +53,7 @@ const deleteAllFromCart = async (idCarrito) => {
 };
 
 const saveOrder = async (userId, products, email, username, direccion) => {
-  const data = await ordersDao.save(userId, products, email, username, direccion);   
+  const data = await ordersDao.create(userId, products, email, username, direccion);   
   return data;
 };
 

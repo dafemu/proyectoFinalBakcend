@@ -1,4 +1,4 @@
-import {getAll, save, getById, deleteById, changeById} from '../utils/contenedor.js';
+import {getAll, create, getById, deleteById, changeById} from '../utils/contenedor.js';
 
 class ArchivoContainer {
 
@@ -17,8 +17,8 @@ class ArchivoContainer {
     return data;
   }
 
-  async save(obj) {
-    const data = await save(obj, this.ruta);
+  async create(obj) {
+    const data = await create(obj, this.ruta);
     return data;
   }
 

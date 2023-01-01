@@ -7,9 +7,9 @@ class CartContainer extends MongoContainer {
     super(Cart);
   }
 
-  async save(userId, username, email, direccion) {       
+  async create(userId, username, email, direccion) {       
     let obj = {userId, username, email, direccion, products: []}
-    const data = await super.save(obj);
+    const data = await super.create(obj);
     return data;
   }
  

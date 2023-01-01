@@ -16,7 +16,7 @@ const getProduct = async (id) => {
 };
 
 const saveProduct = async (product) => {
-  const newProduct = await productsDao.save(product);
+  const newProduct = await productsDao.create(product);
   return newProduct;
 };
 

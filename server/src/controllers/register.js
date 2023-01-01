@@ -1,4 +1,4 @@
-import { save } from '../services/usuarios.js';
+import { create } from '../services/usuarios.js';
 import { sendInfoLog } from '../logs/logger.js';
 import { saveCart } from '../services/carritos.js';
 
@@ -12,7 +12,7 @@ const postRegister = async (req, res) => {
   const {username, edad, telefono, direccion, password, email } = req.body;
 
   try {
-    const user = await save({username, edad, telefono, direccion, password, email, image});
+    const user = await create({username, edad, telefono, direccion, password, email, image});
     if (!user) {
       res.status(400).send({message: 'El usuario ya existe'});
     } else {

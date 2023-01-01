@@ -11,7 +11,7 @@ const getAll = async (ruta) => {
   }
 }
 
-const save = async (product, ruta) => {
+const create = async (product, ruta) => {
   try {  
     let timestamp = new Date().getTime();            
     const arr = await getAll(ruta);
@@ -80,4 +80,4 @@ const deleteById = async (i, ruta) => {
   }
 }
 
-export {getAll, save, getById, deleteById, changeById};
+export {getAll, create, getById, deleteById, changeById};

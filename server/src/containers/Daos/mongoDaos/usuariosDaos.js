@@ -7,7 +7,7 @@ class UserContainer extends MongoContainer {
     super(User);
   }
 
-  async save(obj) {
+  async create(obj) {
     try {
       const userExist = await User.findOne({email: obj.email});
       if (userExist) {
@@ -15,7 +15,7 @@ class UserContainer extends MongoContainer {
       } else {
         const hashPass = await bcrypt.hash(obj.password, 8);
         obj.password = hashPass;
-        const data = await super.save(obj);
+        const data = await super.create(obj);
         return data;
       }      
     } catch (error) {

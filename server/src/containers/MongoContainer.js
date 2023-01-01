@@ -23,12 +23,12 @@ class MongoContainer {
     }
   }
 
-  async save(obj) {
+  async create(obj) {
     try { 
       let timestamp = new Date().getTime();  
       obj.timestamp = timestamp    
       const newObj = new this.schema(obj);
-      const data = await newObj.save();  
+      const data = await newObj.create();  
       return data;
     } catch (error) {
       console.log(error);

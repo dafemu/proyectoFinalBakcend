@@ -1,5 +1,5 @@
 import '../connection/connection.js'; 
-import { getAll, save } from '../services/chat.js';
+import { getAll, create } from '../services/chat.js';
 
 const getChat = async () => {
   const messages = await getAll();  
@@ -7,7 +7,7 @@ const getChat = async () => {
 }
 
 const sendMessage = async (data) => {  
-  const newMessage = await save(data);
+  const newMessage = await create(data);
   return newMessage;
 }
 

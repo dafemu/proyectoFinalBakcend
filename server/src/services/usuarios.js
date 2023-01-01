@@ -10,8 +10,8 @@ const getUser = async (id) => {
   return user;
 };
 
-const save = async (user) => {
-  const newUser = await usersDao.save(user);
+const create = async (user) => {
+  const newUser = await usersDao.create(user);
   return newUser;
 };
 
@@ -20,4 +20,4 @@ const deleteById = async (id) => {
   return user;
 };
 
-export { getUser, getAll, save, deleteById };
+export { getUser, getAll, create, deleteById };

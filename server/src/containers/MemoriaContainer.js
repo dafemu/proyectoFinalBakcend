@@ -20,7 +20,7 @@ class MemoriaContainer {
     }  
   }  
 
-  async save(obj) {
+  async create(obj) {
     let timestamp = new Date().getTime(); 
     let id;
 

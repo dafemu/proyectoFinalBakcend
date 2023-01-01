@@ -7,7 +7,7 @@ class UserContainer extends MemoriaContainer {
     super(users);
   }
 
-  async save(obj){
+  async create(obj){
     try {
       const users = await this.getAll();
       const userExist = users.find(user => user.email === obj.email); 
@@ -16,7 +16,7 @@ class UserContainer extends MemoriaContainer {
       } else {
         const hashPass = await bcrypt.hash(obj.password, 8);
         obj.password = hashPass;
-        const data = await super.save(obj);
+        const data = await super.create(obj);
         console.log(users);          
         return data;
       }      
